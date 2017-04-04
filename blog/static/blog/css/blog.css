@@ -1,0 +1,17 @@
+body {
+    background: rgba(214,221,255,0.38) !important;
+}
+.nav-bg {
+    background: #ffffff !important;
+}
+a h1{
+    color:	#000 !important;
+    font-family:'Lobster';
+}
+a p{
+    color:	#000000 !important;
+    font-family:'Lobster';
+}
+.well-bg {
+    background: #ffffff !important;
+}

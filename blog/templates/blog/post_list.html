@@ -1,27 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Blog</title>
-</head>
-<body>
-<h1>Hey it is working</h1>
-{% for post in posts %}
-    <div>
-        <p>Published: {{ post.published_date }}</p>
-        <p>Author: {{ post.author }}</p>
-    <h1>
-        <a href="">
-            {{ post.title }}
-        </a>
-    </h1>
-    <p>
-        {{ post.text|linebreaksbr }}
-    </p>
-    </div>
+{% extends 'blog/base.html' %}
 
-{% endfor %}
+    {% block content %}
 
+                {% for post in posts %}
+                     <div class="well well-lg well-bg">
+                     <a href="{% url 'post_detail' pk=post.pk %}">
+                        <h1>
 
-</body>
-</html>
+                            {{ post.title }}
+
+                        </h1>
+                        <div class="post">
+                        <p>Published: {{ post.published_date }}</p>
+                        <p>By {{ post.author }}</p>
+
+                        <p>
+                            {{ post.headline|linebreaksbr }}
+                        </p>
+                        <p>
+                        <a href="{% url 'post_detail' pk=post.pk %}">
+                        Continue reading
+                        </a>
+                        </p>
+                        </div>
+                     </a>
+                     </div>
+
+                {% endfor %}
+    {% endblock %}

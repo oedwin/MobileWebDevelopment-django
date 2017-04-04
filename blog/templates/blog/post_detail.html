@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+    {% block content %}
+        <div class="well well-lg well-bg">
+                {% if post.published_date %}
+
+                     {{ post.published_date }}
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                    <a class="btn bg-danger pull-right" href="{% url 'post_edit' pk=post.pk %}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                {% endif %}
+                    <p>By {{ post.author }}</p>
+                <h1>
+
+                        {{ post.title }}
+
+                </h1>
+                <p>
+                    {{ post.text|linebreaksbr }}
+                </p>
+        </div>
+
+
+    {% endblock %}

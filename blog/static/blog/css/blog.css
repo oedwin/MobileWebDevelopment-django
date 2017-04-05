@@ -8,10 +8,14 @@ a h1{
     color:	#000 !important;
     font-family:'Lobster';
 }
+
 a p{
     color:	#000000 !important;
-    font-family:'Lobster';
+
 }
 .well-bg {
     background: #ffffff !important;
+}
+.comment {
+    margin: 20px 0px 20px 20px;
 }

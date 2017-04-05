@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/basetemplate.html' %}
 
     {% block content %}
 
@@ -24,6 +24,7 @@
                         </p>
                         </div>
                      </a>
+                     <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
                      </div>
 
                 {% endfor %}
